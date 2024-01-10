@@ -10,11 +10,13 @@ int main()
     float a[n + 1][2 * n + 1];
     float x[n + 1];
 
+
+    //reading the matrix 
     for (int i = 1; i <= n; i++)
     {
         for (int j = 1; j <= 2 * n; j++)
         {
-            if (j > n)
+            if (j > n)                     //this part augments the identity matrix in second part
             {
                 if (j == i + n)
                 {
@@ -34,7 +36,7 @@ int main()
     }
 
 
-
+    //diagonalizing the matrix
     for (int j = 1; j <= n; j++)
     {
         for (int i = 1; i <= n; i++)
@@ -50,6 +52,8 @@ int main()
         }
     }
 
+
+    //making the diagonal elements of first part of matrix equal to 1
     for (int i = 1; i <= n; i++)
     {
         float t = a[i][i];
@@ -59,6 +63,7 @@ int main()
         }
     }
 
+    //displaying the result
     for (int i = 1; i <= n; i++)
     {
         for (int j = 1; j <= 2 * n; j++)
