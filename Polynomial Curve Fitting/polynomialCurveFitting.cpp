@@ -3,6 +3,18 @@
 #include<cmath>
 using namespace std;
 
+void printMatrix(float matrix[][50],int d)
+{
+    for (int i = 0; i <= d; i++)
+    {
+        for (int j = 0; j <= d + 1; j++)
+        {
+            cout << "M[" << i << "][" << j << "]=" << matrix[i][j];
+        }
+        cout << '\n';
+    }
+}
+
 int main()
 {
     int n,d;
@@ -42,14 +54,8 @@ int main()
             M[i][j] = sum;
         }
     }
-
-    for (int i = 0; i <= d; i++)
-    {
-        for (int j = 0; j <= d + 1; j++)
-        {
-            cout << "M[" << i << "][" << j << "]=" << M[i][j] << endl;
-        }
-    }
+    // print augmented matrix;
+    printMatrix(M, d);
 
     //diaginalizing the matrix
     for (int j = 0; j <= d; j++)
@@ -72,13 +78,9 @@ int main()
         }
     }
 
-    for (int i = 1; i <= d; i++)
-    {
-        for (int j = 1; j <= d + 1; j++)
-        {
-            cout << "M[" << i << "][" << j << "]=" << M[i][j] << endl;
-        }
-    }
+    //print diagonalized matrix
+    cout << "diaginalized matrix"<<endl;
+    printMatrix(M, d);
 
     for (int i = 0; i <= d; i++)
     {
